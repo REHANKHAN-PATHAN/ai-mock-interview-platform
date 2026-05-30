@@ -15,7 +15,7 @@ try{
 const res =
 await fetch(
 
-'${import.meta.env.VITE_API_URL}/api/history/all'
+`${import.meta.env.VITE_API_URL}/api/history/all`
 
 )
 
