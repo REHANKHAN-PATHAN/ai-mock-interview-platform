@@ -60,7 +60,7 @@ file
 const res =
 await axios.post(
 
-"http://localhost:5000/api/resume/analyze",
+'${import.meta.env.VITE_API_URL}/api/resume/analyze',
 
 formData
 
@@ -90,7 +90,7 @@ new Date().toLocaleString()
 
 await axios.post(
 
-"http://localhost:5000/api/history/save",
+'${import.meta.env.VITE_API_URL}/api/history/save',
 
 {
 

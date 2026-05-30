@@ -80,7 +80,7 @@ setLoading(true)
 const res =
 await axios.post(
 
-"http://localhost:5000/api/voice/question"
+'${import.meta.env.VITE_API_URL}/api/voice/question'
 
 )
 
@@ -134,7 +134,7 @@ try{
 const res =
 await axios.post(
 
-"http://localhost:5000/api/voice/evaluate",
+'${import.meta.env.VITE_API_URL}/api/voice/evaluate',
 
 {
 
@@ -179,7 +179,7 @@ new Date()
 
 await axios.post(
 
-"http://localhost:5000/api/history/save",
+'${import.meta.env.VITE_API_URL}/api/history/save',
 
 {
 
