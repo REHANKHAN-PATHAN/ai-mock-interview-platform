@@ -70,6 +70,11 @@ setFeedback(
 res.data.feedback
 )
 
+const user =
+JSON.parse(
+localStorage.getItem("user")
+)
+
 const history =
 
 JSON.parse(
@@ -89,21 +94,13 @@ new Date().toLocaleString()
 })
 
 await axios.post(
-
 `${import.meta.env.VITE_API_URL}/api/history/save`,
-
 {
-
+userId:user._id,
 type:"Resume Analysis",
-
-result:
-res.data.feedback,
-
-date:
-new Date().toLocaleString()
-
+result:res.data.feedback,
+date:new Date().toLocaleString()
 }
-
 )
 
 localStorage.setItem(

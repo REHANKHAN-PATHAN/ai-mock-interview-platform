@@ -86,13 +86,17 @@ async()=>{
 
 try{
 
+const user =
+JSON.parse(
+localStorage.getItem("user")
+)
+
 const res =
 await fetch(
 
-`${import.meta.env.VITE_API_URL}/api/analytics/stats`
+`${import.meta.env.VITE_API_URL}/api/analytics/stats/${user._id}`
 
 )
-
 const data =
 await res.json()
 

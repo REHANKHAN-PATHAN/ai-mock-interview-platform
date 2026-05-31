@@ -528,6 +528,11 @@ r => r === true
 const saveCodingHistory =
 async()=>{
 
+const user =
+JSON.parse(
+localStorage.getItem("user")
+)
+
 const history =
 
 JSON.parse(
@@ -557,21 +562,13 @@ JSON.stringify(history)
 try{
 
 await axios.post(
-
 `${import.meta.env.VITE_API_URL}/api/history/save`,
-
 {
-
+userId:user._id,
 type:"Coding Round",
-
-result:
-`${passed}/${questions.length} Passed`,
-
-date:
-new Date().toLocaleString()
-
+result:`${passed}/${questions.length} Passed`,
+date:new Date().toLocaleString()
 }
-
 )
 
 }

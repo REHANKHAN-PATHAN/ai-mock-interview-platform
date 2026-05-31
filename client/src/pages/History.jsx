@@ -22,7 +22,22 @@ await fetch(
 const data =
 await res.json()
 
-setHistory(data)
+const user =
+JSON.parse(
+localStorage.getItem("user")
+)
+
+const filtered =
+
+data.filter(
+
+item =>
+
+item.userId === user._id
+
+)
+
+setHistory(filtered)
 
 }
 

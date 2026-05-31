@@ -157,6 +157,11 @@ setFeedback(
 res.data.feedback
 )
 
+const user =
+JSON.parse(
+localStorage.getItem("user")
+)
+
 const history =
 
 JSON.parse(
@@ -180,6 +185,7 @@ await axios.post(
 `${import.meta.env.VITE_API_URL}/api/history/save`,
 
 {
+userId:user._id,
 
 type:"AI Interview",
 

@@ -5,53 +5,50 @@ require("../models/History")
 
 router.get(
 
-"/stats",
+"/stats/:userId",
 
 async(req,res)=>{
 
 try{
 
 const history =
-await History.find()
+
+await History.find({
+
+userId:req.params.userId
+
+})
 
 const aiInterviews =
 
 history.filter(
-
 item =>
 item.type ===
 "AI Interview"
-
 ).length
 
 const voiceInterviews =
 
 history.filter(
-
 item =>
 item.type ===
 "Voice Interview"
-
 ).length
 
 const resumeAnalyses =
 
 history.filter(
-
 item =>
 item.type ===
 "Resume Analysis"
-
 ).length
 
 const codingRounds =
 
 history.filter(
-
 item =>
 item.type ===
 "Coding Round"
-
 ).length
 
 res.json({
@@ -65,7 +62,6 @@ resumeAnalyses,
 codingRounds,
 
 total:
-
 history.length
 
 })
